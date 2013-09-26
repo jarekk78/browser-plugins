@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Obserwowane Allegro",
+  "description": "Rozszerzenie dodaje menu kontekstowe na stronie \"Obserwowane oferty\". Polecenia menu pozwalają zaznaczyć/odznaczyć wszystkie lub wybrane powiadomienia e-mail.",
+  "version": "1.0",
+  "permissions": [
+    "contextMenus", "tabs", "http://allegro.pl/myaccount/watch.php"
+  ],
+  "author": "Jarosław Kacerka (kacerkaj@gmail.com)",
+  "homepage_url": "https://github.com/jarekk78/chrome-allegro-obserwowane",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "icons": {
+    "16": "icon16.png",
+    "512": "icon.png"
+  }
+}
