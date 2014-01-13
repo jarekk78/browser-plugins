@@ -10,7 +10,7 @@ function gcp_success(position) {
 
 function gcp_error(err) { console.log("getCurrentPosition failed"+ err); }
 
-$('.dir-m').append('<img class=\'earth-img\' src=\'chrome-extension://alebdghadjnafjffmlhnjeilhhpbncnp/images/earth.gif\'>');
+$('.dir-m').append('<img class=\'earth-img\' src=\''+chrome.extension.getURL("/images/earth.gif")+'\'>');
 $('.dir-m').click(function() {
   $(this).next().find('.kd-input-text').val("current location (2)");
   maps_a_coords_gcp_input = $( this ).next().find('.kd-input-text');
