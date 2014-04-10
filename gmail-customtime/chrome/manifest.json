@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Custom time display in gmail",
+  "description": "Formats email date (rightmost column) as: MM-dd hh:mm",
+  "version": "1.0",
+  "permissions": [
+    "contextMenus", "tabs", "https://mail.google.com/mail/u/0/"
+  ],
+  "author": "Jarosław Kacerka (kacerkaj@gmail.com)",
+  "homepage_url": "https://github.com/jarekk78/",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "icons": {
+    "16": "icon16.png",
+    "512": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "all_frames": true,
+      "js": ["withTimer.js"]
+    }
+  ]
+}
