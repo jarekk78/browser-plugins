@@ -4,18 +4,16 @@
   "name": "Google Map - geolocation",
   "description": "This extension adds an option of auto-filling geolocation for \"Get directions\" in google maps",
   "version": "1.0",
-  "icons": { "16": "images/icon16.png",
-           "48": "images/icon48.png",
-          "128": "images/icon128.png" },
-  "content_scripts": [
-    {
-      "matches": ["https://maps.google.com/*"],
-      "css": ["maps-A-coords.css"],
-      "js": ["scripts/jquery-2.0.3.min.js","scripts/maps-A-coords.js"]
-    }
-  ],
-  "web_accessible_resources": ["scripts/jquery-2.0.3.min.js","images/earth.gif","scripts/jquery-2.0.3.min.map"],
   "permissions": [
-    "https://maps.google.com/"
-  ]
+    "contextMenus", "tabs", "https://www.google.com/maps/*"
+  ],
+  
+  
+  "background": {
+    "scripts": ["scripts/background.js"]
+  },
+  "icons": { 
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png" }
 }

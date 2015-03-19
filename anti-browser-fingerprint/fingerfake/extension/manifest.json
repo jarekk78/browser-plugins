@@ -1,0 +1,32 @@
+{
+	"manifest_version": 2,
+	
+	"name": "FingerFake",
+	"author": "Jaroslaw Kacerka, kacerkaj@gmail.com",
+	"description": "Tamper with certain fingerprinting methods",
+	"version": "1.0",
+
+	"permissions": [
+		"webRequest",
+		"*://*/*",
+		"webRequestBlocking",
+		"*://*/*",
+		"cookies",
+		"storage",
+        "activeTab"
+	],
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+	
+	"content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "all_frames": true, 
+      "js": ["content.js"]
+    }
+  ]
+
+
+}

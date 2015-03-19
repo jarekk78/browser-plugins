@@ -1,0 +1,1 @@
+Extension changes the appearance of WIKAMP site (Lodz University of Technology virtual campus).

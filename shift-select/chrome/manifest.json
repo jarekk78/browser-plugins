@@ -1,0 +1,21 @@
+{
+  "name": "Shift-select",
+  "author": "Jaroslaw Kacerka, kacerkaj@gmail.com",
+
+  "version": "1.0.0",
+  "manifest_version": 4,
+  "description": "Use shift to select all checkboxes.",
+  "homepage_url": "http://ania-i-jarek.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "scripts": ["src/background.js"]
+  },
+  "permissions": [
+    "<all_urls>",
+    "tabs"
+  ]
+}

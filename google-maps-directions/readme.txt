@@ -1,3 +1,9 @@
+Update 2014.05.04 - Google maps changed a few weeks ago. There's no "A" or "B", hence a new version of extension
+as well. Option of filling starting point or destination is now in context menu.
+
+JQuery and animated earth removed.
+
+-------------------------
 Extension uses the geolocation api to fill address field on Google Maps' Get directions.
 
 Click on "A" - next to starting address to fill the input box with your coordinates, e.g. 35.123,-41.4892

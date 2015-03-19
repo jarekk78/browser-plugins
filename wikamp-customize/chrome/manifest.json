@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Customize WIKAMP",
+  "description": "",
+  "version": "1.0",
+  "permissions": [
+    "contextMenus", "tabs", "http://*.edu.p.lodz.pl/*"
+  ],
+  "author": "Jaroslaw Kacerka, kacerkaj@gmail.com",
+
+  "homepage_url": "https://github.com/jarekk78/",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "icons": {
+    "16": "icon16.png",
+    "512": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*.edu.p.lodz.pl/*"],
+      "all_frames": true,
+      "js": ["content.js"]
+    }
+  ]
+}
