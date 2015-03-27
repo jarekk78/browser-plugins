@@ -53,13 +53,13 @@ document.getElementById("page-header").style.height="20px";
 var tm = document.getElementsByClassName("rightTop");
 for (i=0;i<tm.lenght;i++) tm[i].style.height = "20px";
 
-forAllChildrenOfClass( "topMenu", function(e) { e.style.paddingTop="0px"; e.style.paddingBottom="0px"; e.style.height="20px"; } );
+//forAllChildrenOfClass( "topMenu", function(e) { e.style.paddingTop="0px"; e.style.paddingBottom="0px"; e.style.height="20px"; } );
 
 forAllChildrenOfClass( "logo", function(e) { e.style.height="0px";} );
 
 console.log( "Wikamp content.js" );
 
-if (document.getElementsByClassName("headermain").length>0) {
+if (0>1 && document.getElementsByClassName("headermain").length>0) {
 	document.getElementsByClassName("headermain")[0].style.lineHeight=0;
 	document.getElementsByClassName("headermain")[0].style.fontSize="10px";
 	document.getElementById("page-header-wrapper").style.height = "20px";

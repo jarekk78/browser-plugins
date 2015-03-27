@@ -1,6 +1,6 @@
 function timerFun( timerIdInTimersArray ) {
 	var currentTime = new Date();
-//	console.log('timerFun at '+currentTime );
+	console.log('timerFun at '+currentTime );
 
 	var format = 'MM-dd hh:mm';
 	var notBoldIfPreviousYear = true;
@@ -19,6 +19,22 @@ function timerFun( timerIdInTimersArray ) {
 			;
 	}
 
+	function replaceAll( s, r ) {
+		var rep = r.split(";");
+		for (var i=0;i<rep.length;i++) {
+			var t = rep[i].split("=");
+			s = s.replace(t[0],t[1]);
+		}
+		return s;
+	}
+	
+	function translateDate( s ) {
+		var polish = "stycznia=jan;lutego=feb;marca=mar;kwietnia=apr;maja=may;czerwca=jun;lipca=jul;sierpnia=aug;września=sep;października=oct;listopada=nov;grudnia=dec";
+		s = replaceAll( s, polish );
+		s = replaceAll( s, " at = " );
+		return s;
+	}
+	
 	var currentYear = (new Date()).getFullYear();
 
 	var dateColumnCells = document.getElementsByClassName('xW xY ');
@@ -29,8 +45,8 @@ function timerFun( timerIdInTimersArray ) {
 	  	if (j==1) i=k;
 		var dateCell = dateColumnCells[i].childNodes[0];
 		var dateInTitleArg = dateCell.getAttribute('title');
-
-		var date = new Date(dateInTitleArg);
+		
+		var date = new Date( translateDate( dateInTitleArg ) );
 		var isPreviousYear = currentYear != date.getFullYear();
 		
 		var newInnerHTML = (notBoldIfPreviousYear&&isPreviousYear?'':'<b>')+formatDate( date, format )+(notBoldIfPreviousYear&&isPreviousYear?'':'</b>');

@@ -1,5 +1,10 @@
+.gitignore
 private
 chrome-allegro-obserwowane.pem
 private/chrome-allegro-obserwowane.pem
 .DS_Store
 private/*
+anti-browser-fingerprint/private-notes/*
+anti-browser-fingerprint/private-notes
+anti-browser-fingerprint/private-with-data/extension
+anti-browser-fingerprint/private-with-data/extension/*

@@ -3,6 +3,8 @@
 
   "name": "Custom time display in gmail",
   "description": "Formats email date (rightmost column) as: MM-dd hh:mm",
+  "author": "Jaroslaw Kacerka, kacerkaj@gmail.com",
+
   "version": "1.0",
   "permissions": [
     "contextMenus", "tabs", "https://mail.google.com/mail/u/0/"

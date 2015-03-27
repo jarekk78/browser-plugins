@@ -3,7 +3,7 @@ function genericOnClick0(info, tab) {
 }
 
 var pat = "https://mail.google.com/mail/u/0/*";
-/*
+
 var id = chrome.contextMenus.create({
 	"documentUrlPatterns":[pat], 
 	"title": "gmail customtime", 
@@ -16,4 +16,3 @@ chrome.contextMenus.create({
 	"contexts":[ "page" ], 
 	"onclick": genericOnClick0
 	});
-*/

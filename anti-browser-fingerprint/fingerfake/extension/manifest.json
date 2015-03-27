@@ -4,7 +4,7 @@
 	"name": "FingerFake",
 	"author": "Jaroslaw Kacerka, kacerkaj@gmail.com",
 	"description": "Tamper with certain fingerprinting methods",
-	"version": "1.0",
+	"version": "1.1",
 
 	"permissions": [
 		"webRequest",

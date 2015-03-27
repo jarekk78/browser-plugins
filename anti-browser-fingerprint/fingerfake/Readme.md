@@ -3,15 +3,16 @@ FingerFake
 
 Plugin tampers with certain browser fingerprinting methods used for tracking, e.g. readers, subscribers.
 
-Plugin tested on certain UK an PL newspapers. 
+Plugin tested on certain UK, German and PL newspapers. 
 
-Warning: several values need to be included in background.js in order for plugin to operate. Plase contact me
+Warning: file background.js includes only sample date. In order for plugin to operate. Plase contact me
 for further information.
 
 Plugin przeszkadza w działaniu wybranych metod tworzących fingerprint przeglądarki, co utrudnia śledzenie
-użytkowników, czytelników, itp. Pozwala to na obejście tzw. paywall stosowanego np. przez niektóre gazety (w Polsce i UK).
+użytkowników, czytelników, itp. Pozwala to na obejście tzw. paywall stosowanego np. przez niektóre gazety (w Polsce, Niemczech i UK).
 
-Uwaga: w pliku background.js usunięto kilka wartości potrzebnych do działania na przetestowanych stronach. 
+Uwaga: w pliku background.js są przykładowe (nieprawdziwe) dane. Brak wartości potrzebnych do działania na przetestowanych stronach. Więcej 
+informacji - kontakt.
 
 Code based on URL Rewrite for Chrome by Sijmen Mulder (ik@sjmulder.nl).
 

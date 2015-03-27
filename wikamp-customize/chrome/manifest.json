@@ -3,7 +3,7 @@
 
   "name": "Customize WIKAMP",
   "description": "",
-  "version": "1.0",
+  "version": "1.1",
   "permissions": [
     "contextMenus", "tabs", "http://*.edu.p.lodz.pl/*"
   ],
