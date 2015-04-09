@@ -1,6 +1,12 @@
 var inputs = document.getElementsByTagName("input");
 for (var i = 0; i < inputs.length; i++) {
   if (inputs[i].type == "checkbox") {
+	
+	// http://stackoverflow.com/questions/19469881/javascript-remove-all-event-listeners-of-specific-type
+//	var el = inputs[i], elClone = el.cloneNode(true);
+//	el.parentNode.replaceChild(elClone, el);
+	
+    inputs[i].onclick = function(){};
     inputs[i].addEventListener("click", function(event){
     	if (shift_down==0 || first_clicked==null) {
     		store_first_clicked( this );
@@ -12,10 +18,16 @@ for (var i = 0; i < inputs.length; i++) {
 }
 
 var shift_down = 0;
-function set_shift_down( down ) { shift_down = down; }
+function set_shift_down( down ) { 
+shift_down = down; 
+console.log( "Shift: "+down );
+}
 
 var first_clicked = null;
-function store_first_clicked( obj ) { first_clicked = obj; }
+function store_first_clicked( obj ) { 
+console.log( "first-clicked: " );
+	console.log( obj );
+first_clicked = obj; }
 
 function in_rect( pos, begin, end ) { 
 	var rLeft = begin.left;
@@ -32,6 +44,8 @@ function in_rect( pos, begin, end ) {
 	}
 	var queryX = (pos.left+pos.right)/2;
 	var queryY = (pos.top+pos.bottom)/2;
+//	console.log( "in_rect? "+queryX+","+queryY+" in "+rLeft+","+rTop+" : "+rRight+","+rBottom );
+//	if (queryX >= rLeft && queryX <= rRight && queryY >= rTop && queryY <= rBottom) console.log( "true" );
 	return (queryX >= rLeft && queryX <= rRight && queryY >= rTop && queryY <= rBottom);
 }
 
@@ -50,20 +64,28 @@ function get_common_name( n1, n2 ) { return sharedStart( [n1, n2] ); }
 if (typeof String.prototype.startsWith != 'function') { String.prototype.startsWith = function (str){ return this.indexOf(str) == 0; }; }
 
 function probably_is_in_series( q, common ) {
-	if (common.len==0) return true;
-	
+	if (common.length==0) return true;
+	console.log( "probably_is_in_series("+q+","+common+"): " );
 	var PROB_THRESHOLD = 0.8;
 	if (q.startsWith(common)) return true;
+	console.log( "does not start with common part" );
 	var prob = 0;
-	var i; for (i=1;i<common.len-1;i++) {
-		if (q.startsWith( common.substring( 0, common.len-i) )) prob = 1-1.0*i/common.len;
-		if (prob>PROB_THRESHOLD) return true;
+	var i; for (i=1;i<common.length-1;i++) {
+		if (q.startsWith( common.substring( 0, common.length-i) )) {
+			console.log( "q ("+q+") starts with ("+common.substring( 0, common.length-i)+"): "+(q.startsWith( common.substring( 0, common.length-i) )) );
+			prob = 1-1.0*i/common.length;
+			console.log( "prob: "+prob+" above? "+(prob>PROB_THRESHOLD) );
+			if (prob>PROB_THRESHOLD) return true;
+			else break;
+		}
 	}
+	console.log( "prob not above threshold: "+prob );
+	console.log( "false" );
 	return false;
 }
 
 function second_clicked( obj ) {
-	console.log( "second_clicked: "+obj );
+	console.log( "second_clicked: " );
 	console.log( obj );
 	var rect = obj.getBoundingClientRect();
 	console.log(rect.top, rect.right, rect.bottom, rect.left);
@@ -72,7 +94,7 @@ function second_clicked( obj ) {
 		var common_name = get_common_name( first_clicked.name, obj.name );
 		console.log( "common_name: "+common_name );
 		for (var i = 0; i < inputs.length; i++) {
-			console.log( "? "+inputs[i].name );
+//			console.log( "? "+inputs[i].name );
 			if (inputs[i].type == "checkbox" 
 				&& inputs[i].disabled==false // OPTION: only enabled elements
 				&& probably_is_in_series( inputs[i].name, common_name ) // OPTION: try to detect series of elements
@@ -80,6 +102,7 @@ function second_clicked( obj ) {
 //				&& inputs[i]!=obj // OPTION: set last element as first (if commented)
 			) {
 				if (in_rect( inputs[i].getBoundingClientRect(), first_clicked.getBoundingClientRect(), obj.getBoundingClientRect() )) {
+					console.log( "checking: "+inputs[i].name );
 					inputs[i].checked = first_clicked.checked;
 				}
 			}
