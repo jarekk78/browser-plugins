@@ -1,0 +1,12 @@
+{
+  "name": "Loteria Paragonowa - pomocnik",
+  "description": "Przyspiesza wypełnianie formularza w Loterii Paragonowej",
+  "version": "0.1",
+  "permissions": ["contextMenus", "storage"],
+  "content_scripts":[{
+    "run_at" : "document_end",
+    "matches": ["https://loteriaparagonowa.gov.pl/"],
+    "js": ["content.js"]
+  }],
+  "manifest_version": 2
+}
